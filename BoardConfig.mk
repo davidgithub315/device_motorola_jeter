@@ -78,6 +78,9 @@ TARGET_QCOM_NO_FM_FIRMWARE := true
 # Assert
 TARGET_OTA_ASSERT_DEVICE := jeter,aljeter
 
+# HWUI
+HWUI_COMPILE_FOR_PERF := true
+
 # GPS
 LOC_HIDL_VERSION := 4.0
 
