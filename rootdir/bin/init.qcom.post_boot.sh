@@ -466,7 +466,7 @@ if [ "$ProductName" == "msmnile" ] || [ "$ProductName" == "kona" ] ; then
       configure_zram_parameters
       configure_read_ahead_kb_values
       echo 0 > /proc/sys/vm/page-cluster
-      echo 100 > /proc/sys/vm/swappiness
+      echo 110 > /proc/sys/vm/swappiness
 else
     arch_type=`uname -m`
     MemTotalStr=`cat /proc/meminfo | grep MemTotal`
@@ -570,7 +570,7 @@ else
     fi
 
     # Set swappiness to 100 for all targets
-    echo 100 > /proc/sys/vm/swappiness
+    echo 110 > /proc/sys/vm/swappiness
 
     # Disable wsf for all targets beacause we are using efk.
     # wsf Range : 1..1000 So set to bare minimum value 1.
