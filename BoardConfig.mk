@@ -65,9 +65,6 @@ TARGET_BOOTANIMATION_HALF_RES := true
 BACKLIGHT_PATH := /sys/class/leds/lcd-backlight/brightness
 BOARD_NO_CHARGER_LED := true
 
-# Encryption
-TARGET_HW_DISK_ENCRYPTION := true
-
 # Assert
 TARGET_OTA_ASSERT_DEVICE := jeter,aljeter
 
