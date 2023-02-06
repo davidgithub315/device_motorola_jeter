@@ -237,7 +237,6 @@ PRODUCT_PACKAGES += \
     libOmxEvrcEnc \
     libOmxG711Enc \
     libOmxQcelp13Enc \
-    libOmxSwVencHevc \
     libOmxVdec \
     libOmxVenc \
     libstagefrighthw \
@@ -287,7 +286,7 @@ PRODUCT_COPY_FILES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power-service \
+    android.hardware.power-service-qti \
     android.hardware.power@1.2.vendor
 
 # Perf
@@ -374,7 +373,7 @@ PRODUCT_PACKAGES += \
 # Shims
 PRODUCT_PACKAGES += \
     libui_shim \
-    libqsapshim
+    libqsap_shim
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
