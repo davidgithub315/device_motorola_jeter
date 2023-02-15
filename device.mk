@@ -411,8 +411,6 @@ PRODUCT_DEX_PREOPT_BOOT_IMAGE_PROFILE_LOCATION := frameworks/base/config/boot-im
 PRODUCT_ALWAYS_PREOPT_EXTRACTED_APK := true
 DONT_DEXPREOPT_PREBUILTS := true
 USE_DEX2OAT_DEBUG := false
-PRODUCT_MINIMIZE_JAVA_DEBUG_INFO := true
-PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD := false
 
 # USB
 PRODUCT_PACKAGES += \
@@ -428,7 +426,6 @@ PRODUCT_COPY_FILES += \
 # Wifi
 PRODUCT_PACKAGES += \
     libwpa_client \
-    libqsap_sdk \
     wcnss_service \
     WifiOverlay
 
