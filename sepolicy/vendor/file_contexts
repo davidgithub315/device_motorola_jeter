@@ -2,9 +2,6 @@
 /dev/block/platform/soc/7824900.sdhci/by-name/frp        u:object_r:frp_block_device:s0
 /dev/block/platform/soc/7824900.sdhci/by-name/metadata   u:object_r:metadata_block_device:s0
 
-# Camera
-/dev/laser                                               u:object_r:laser_device:s0
-
 # Capsense
 /(vendor|system/vendor)/bin/capsense_reset               u:object_r:capsense_reset_exec:s0
 
@@ -22,9 +19,6 @@
 
 # Fsg
 /(vendor|system/vendor)/fsg                              u:object_r:fsg_firmware_file:s0
-
-# Init scripts
-/(vendor|system/vendor)/bin/init\.mmi\.laser\.sh u:object_r:vendor_qti_init_shell_exec:s0
 
 # Input devices
 /(vendor|system/vendor)/usr/idc(/.*)?                    u:object_r:vendor_idc_file:s0
