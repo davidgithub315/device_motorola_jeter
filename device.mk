@@ -137,7 +137,6 @@ PRODUCT_PACKAGES += \
     android.hardware.memtrack@1.0-service \
     android.frameworks.displayservice@1.0.vendor \
     android.frameworks.sensorservice@1.0.vendor \
-    vendor.display.config@1.9 \
     vendor.display.config@1.9.vendor
 
 # Sensors
@@ -380,8 +379,7 @@ PRODUCT_PACKAGES += \
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
-    $(LOCAL_PATH) \
-    hardware/qcom-caf/msm8996
+    $(LOCAL_PATH)
 
 # Tethering
 PRODUCT_PACKAGES += \

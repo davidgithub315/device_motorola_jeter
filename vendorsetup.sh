@@ -23,10 +23,10 @@ echo ""
 
 # HAL's
 echo "Cloning Hals"
-rm -rf hardware/qcom-caf/msm8996/audio
-git clone https://github.com/LineageOS/android_hardware_qcom_audio -b lineage-20.0-caf-msm8996 hardware/qcom-caf/msm8996/audio
-rm -rf hardware/qcom-caf/msm8996/media
-git clone https://github.com/LineageOS/android_hardware_qcom_media -b lineage-20.0-caf-msm8996 hardware/qcom-caf/msm8996/media
-rm -rf hardware/qcom-caf/msm8996/display
-git clone https://github.com/LineageOS/android_hardware_qcom_display -b lineage-20.0-caf-msm8996 hardware/qcom-caf/msm8996/display
+rm -rf hardware/qcom/audio
+git clone https://github.com/aospa-vince/android_hardware_qcom_audio -b topaz-8953 hardware/qcom/audio
+rm -rf hardware/qcom/media
+git clone https://github.com/aospa-vince/android_hardware_qcom_media -b topaz-8953 hardware/qcom/media
+rm -rf hardware/qcom/display
+git clone https://github.com/aospa-vince/android_hardware_qcom_display -b topaz-8953 hardware/qcom/display
 echo ""

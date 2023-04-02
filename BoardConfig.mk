@@ -132,7 +132,8 @@ TARGET_USES_INTERACTION_BOOST := true
 # Product
 TARGET_PRODUCT_PROP += $(DEVICE_PATH)/product.prop
 
-# RIL                                                             ENABLE_VENDOR_RIL_SERVICE := true
+# RIL
+ENABLE_VENDOR_RIL_SERVICE := true
 TARGET_USES_OLD_MNC_FORMAT := true
 
 # Qualcomm support
