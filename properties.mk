@@ -92,6 +92,28 @@ PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.heapminfree=4m \
     dalvik.vm.heapmaxfree=8m
 
+# Display/Graphics
+PRODUCT_VENDOR_PROPERTIES += \
+    debug.gralloc.enable_fb_ubwc=1 \
+    debug.hwui.renderer=opengl \
+    debug.hwui.skia_atrace_enabled=false \
+    debug.mdpcomp.logs=0 \
+    ro.hardware.egl=adreno \
+    ro.hardware.vulkan=adreno \
+    ro.opengles.version=196610 \
+    ro.vendor.display.cabl=0 \
+    vendor.display.disable_skip_validate=1 \
+    vendor.display.disable_rotator_downscale=1 \
+    vendor.display.enable_default_color_mode=1 \
+    vendor.display.disable_scaler=1 \
+    vendor.gralloc.enable_fb_ubwc=1
+
+PRODUCT_SYSTEM_PROPERTIES += \
+    persist.hwc.enable_vds=1 \
+    persist.hwc.mdpcomp.enable=true \
+    persist.hwc.ptor.enable=true \
+    sdm.debug.disable_skip_validate=1
+
 # Fastbootd
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.fastbootd.available=true
@@ -106,14 +128,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.dbg.volte_avail_ovr=1 \
     persist.dbg.vt_avail_ovr=1 \
     persist.dbg.wfc_avail_ovr=1
-
-# Display
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.sf.hwc_set_default_colormode=true \
-    ro.vendor.display.cabl=0 \
-    vendor.display.disable_rotator_downscale=1 \
-    vendor.display.enable_default_color_mode=1 \
-    vendor.gralloc.disable_ahardware_buffer=1
 
 # Fingerprint
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -132,39 +146,32 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.frp.pst=/dev/block/bootdevice/by-name/frp
 
-# GPU
-PRODUCT_PROPERTY_OVERRIDES += \
-    debug.egl.hw=0 \
-    debug.enable.sglscale=1 \
-    debug.gralloc.gfx_ubwc_disable=0 \
-    debug.sf.enable_hwc_vds=0 \
-    debug.sf.hw=0 \
-    debug.cpurend.vsync=false \
-    debug.sf.disable_client_composition_cache=1 \
-    debug.sf.latch_unsignaled=1 \
-    debug.sf.recomputecrop=0 \
-    dev.pm.dyn_samplingrate=1 \
-    persist.hwc.mdpcomp.enable=true \
-    vendor.display.disable_rotator_split=1 \
-    vendor.display.disable_skip_validate=1 \
-    vendor.display.perf_hint_window=50 \
-    vendor.gralloc.enable_fb_ubwc=1
-
-# Surfaceflinger
-PRODUCT_PROPERTY_OVERRIDES += \
+# SurfaceFlinger
+PRODUCT_SYSTEM_PROPERTIES += \
     debug.sf.use_phase_offsets_as_durations=1 \
     debug.sf.late.sf.duration=10500000 \
-    debug.sf.late.app.duration=20500000 \
-    debug.sf.early.sf.duration=16000000 \
-    debug.sf.early.app.duration=16500000 \
+    debug.sf.late.app.duration=23500000 \
+    debug.sf.early.sf.duration=15000000 \
+    debug.sf.early.app.duration=15500000 \
     debug.sf.earlyGl.sf.duration=13500000 \
-    debug.sf.earlyGl.app.duration=21000000
-
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    debug.sf.earlyGl.app.duration=9500000 \
+    debug.sf.disable_backpressure=1 \
+    debug.sf.disable_hwc=0 \
+    debug.sf.enable_hwc_vds=0 \
+    debug.sf.latch_unsignaled=1 \
+    debug.sf.auto_latch_unsignaled=true \
+    debug.sf.recomputecrop=0 \
+    debug.sf.enable_transaction_tracing=false \
+    debug.sf.predict_hwc_composition_strategy=0 \
     ro.surface_flinger.force_hwc_copy_for_virtual_displays=true \
-    ro.surface_flinger.max_frame_buffer_acquired_buffers=3 \
     ro.surface_flinger.max_virtual_display_dimension=4096 \
-    ro.surface_flinger.use_color_management=true
+    ro.surface_flinger.max_frame_buffer_acquired_buffers=3 \
+    ro.surface_flinger.protected_contents=true \
+    ro.surface_flinger.use_content_detection_for_refresh_rate=true \
+    ro.surface_flinger.set_display_power_timer_ms=10000 \
+    ro.surface_flinger.set_touch_timer_ms=200 \
+    ro.surface_flinger.set_idle_timer_ms=1000 \
+    ro.surface_flinger.wcg_composition_dataspace=143261696
 
 # Media
 PRODUCT_PROPERTY_OVERRIDES += \
