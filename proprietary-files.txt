@@ -942,13 +942,13 @@ vendor/lib64/vendor.qti.gnss@4.0-service.so|3c75d133af5193436167380aa89abcf05d07
 vendor/lib64/vendor.qti.gnss@4.0.so|cc2504016d0ce0afbc58ac95207a4b913f2ccfe9
 vendor/lib64/vendor.qti.hardware.qccsyshal@1.0.so|19a1f7ffb8118c207aa8cb2318996605771c339a
 
-# Gatekeeper - from LA.UM.9.6.3.r1-06200-89xx.0
-vendor/lib64/hw/gatekeeper.msm8937.so|7be56a403c30f093865f08bf0f0335aeb99ec7fd
+# Gatekeeper - from LA.UM.10.6.2.r1-02500-89xx.0
+vendor/lib64/hw/gatekeeper.msm8937.so|74f5325285e02be496c5d9fc6dce275c75a2020c
 
-# Gatekeeper - from deen_sprout QPKS30.54-22-12
-vendor/bin/hw/android.hardware.gatekeeper@1.0-service-qti|eeb4ba9eacb57c958051a47d307968254ee081d0
+# Gatekeeper - from LA.UM.10.6.2.r1-02500-89xx.0
+vendor/bin/hw/android.hardware.gatekeeper@1.0-service-qti|634b7bb3cffcfea34c7be72e4d8e5c902bda5036
 vendor/etc/init/android.hardware.gatekeeper@1.0-service-qti.rc|1b8d5f58fe0a57906acf72b862c16a2521daa97b
-vendor/lib64/hw/android.hardware.gatekeeper@1.0-impl-qti.so|8c5a8f0bec5942dc3527cff95ae09959234e9e58
+vendor/lib64/hw/android.hardware.gatekeeper@1.0-impl-qti.so|3901d3a8028ba6a63b46d7b9fde9fb3740ff177b
 
 # Graphics (SDM) - from X00RD QKQ1.191002.002-17.07.2003.405-20200330
 vendor/lib/libscalar.so|7ac579768ffd2caee903d69d8fd3f7918b04ffbe
@@ -1033,7 +1033,7 @@ vendor/lib64/libkeymasterdeviceutils.so|5dcb23eb145570876dd1f4f05ca56a114bc9de56
 vendor/lib64/libkeymasterprovision.so|3eb6d2ed05871605cf020bf8459296aea2453f90
 vendor/lib64/libkeymasterutils.so|45cc1a92cf151c56d940c6a7e23d64a207357b9a
 
-# Keystore - from LA.UM.9.6.3.r1-06200-89xx.0
+# Keystore - LA.UM.10.6.2.r1-02500-89xx.0
 vendor/lib64/hw/keystore.msm8937.so|0942d9308cc9dfbc305dd0b9e8b1e3ba75ebae38
 
 # Listen - from dpl_sprout RKQ1.200928.002
