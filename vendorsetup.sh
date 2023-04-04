@@ -23,10 +23,7 @@ echo ""
 
 # HAL's
 echo "Cloning Hals"
-rm -rf hardware/qcom/audio
-git clone https://github.com/aospa-vince/android_hardware_qcom_audio -b topaz-8953 hardware/qcom/audio
-rm -rf hardware/qcom/media
+git clone https://github.com/aospa-vince/android_hardware_qcom_audio -b topaz-8953 vendor/qcom/opensource/audio-hal/primary-hal
 git clone https://github.com/aospa-vince/android_hardware_qcom_media -b topaz-8953 hardware/qcom/media
-rm -rf hardware/qcom/display
 git clone https://github.com/aospa-vince/android_hardware_qcom_display -b topaz-8953 hardware/qcom/display
 echo ""
