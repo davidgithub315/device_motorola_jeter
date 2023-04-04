@@ -141,7 +141,7 @@ PRODUCT_PACKAGES += \
 # Sensors
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sensors/hals.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/hals.conf \
-    $(LOCAL_PATH)/configs/sensors/sensor_def_qcomdev.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/sensor_def_qcomdev.conf
+    $(LOCAL_PATH)/configs/sensors/sensor_def_qcomdev.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/sensor_def_qcomdev.conf \
 
 PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-impl \
@@ -149,8 +149,8 @@ PRODUCT_PACKAGES += \
 
 # DRM
 PRODUCT_PACKAGES += \
-    android.hardware.drm@1.3.vendor \
-    android.hardware.drm-service.clearkey
+   android.hardware.drm@1.3.vendor \
+   android.hardware.drm-service.clearkey
 
 # Filesystem
 PRODUCT_PACKAGES += \
@@ -173,6 +173,8 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PACKAGES += \
     libminijail \
+    libavservices_minijail \
+    libavservices_minijail.vendor \
     android.hardware.gnss@1.0.vendor \
     android.hardware.gnss@1.1.vendor \
     android.hardware.gnss@2.1.vendor
@@ -232,10 +234,6 @@ PRODUCT_PACKAGES += \
 # Lights
 PRODUCT_PACKAGES += \
     android.hardware.light@2.0-service.msm8937
-
-# QTI Common
-TARGET_COMMON_QTI_COMPONENTS := \
-    perf
 
 # Media
 PRODUCT_COPY_FILES += \
@@ -302,6 +300,15 @@ PRODUCT_COPY_FILES += \
 # IDC
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/idc/uinput-egis.idc:$(TARGET_COPY_OUT_VENDOR)/usr/idc/uinput-egis.idc
+
+# Power
+PRODUCT_PACKAGES += \
+    android.hardware.power-service-qti \
+    android.hardware.power@1.2.vendor
+
+# Perf
+PRODUCT_PACKAGES+= \
+    vendor.qti.hardware.perf@2.2.vendor
 
 # Protobuf
 PRODUCT_PACKAGES += \
