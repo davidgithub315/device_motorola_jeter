@@ -65,9 +65,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     vendor.qcom.bluetooth.soc=pronto
 
-# DRM
-PRODUCT_VENDOR_PROPERTIES += \
-    drm.service.enabled=true
+# Blur
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.surface_flinger.supports_background_blur=0
 
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -82,46 +82,61 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.charger.enable_suspend=true
 
-# Cne
+# CNE
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.cne.feature=1 \
     persist.vendor.mwqem.enable=1
 
 # Dalvik
 PRODUCT_PROPERTY_OVERRIDES += \
-    dalvik.vm.heapstartsize=16m \
-    dalvik.vm.heapgrowthlimit=256m \
+    dalvik.vm.dex2oat64.enabled=true \
+    dalvik.vm.heapstartsize=8m \
+    dalvik.vm.heapgrowthlimit=192m \
     dalvik.vm.heapsize=512m \
     dalvik.vm.heaptargetutilization=0.75 \
-    dalvik.vm.heapminfree=4m \
+    dalvik.vm.heapminfree=512k \
     dalvik.vm.heapmaxfree=8m
+
+# DRM
+PRODUCT_VENDOR_PROPERTIES += \
+    drm.service.enabled=true
 
 # Fastbootd
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.fastbootd.available=true
 
-# Soc
+# Fingerprint
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.soc.manufacturer=QTI \
-    ro.soc.model=MSM8937
+    persist.qfp=false
 
-# Debug
+# FRP
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.dbg.volte_avail_ovr=1 \
-    persist.dbg.vt_avail_ovr=1 \
-    persist.dbg.wfc_avail_ovr=1
+    ro.frp.pst=/dev/block/bootdevice/by-name/frp
 
-# Display
+# Graphics/Display
 PRODUCT_PROPERTY_OVERRIDES += \
+    debug.egl.hw=0 \
+    debug.enable.sglscale=1 \
+    debug.gralloc.gfx_ubwc_disable=0 \
+    debug.sf.enable_hwc_vds=0 \
+    debug.sf.hw=0 \
+    debug.cpurend.vsync=false \
+    debug.sf.auto_latch_unsignaled=true \
+    debug.sf.recomputecrop=0 \
+    debug.hwui.renderer=skiagl \
+    debug.renderengine.backend=skiaglthreaded \
+    renderthread.skia.reduceopstasksplitting=true \
+    dev.pm.dyn_samplingrate=1 \
+    persist.hwc.mdpcomp.enable=true \
+    vendor.display.disable_rotator_split=1 \
+    vendor.display.disable_skip_validate=1 \
+    vendor.display.perf_hint_window=50 \
+    vendor.gralloc.enable_fb_ubwc=1 \
     ro.sf.hwc_set_default_colormode=true \
     ro.vendor.display.cabl=0 \
     vendor.display.disable_rotator_downscale=1 \
     vendor.display.enable_default_color_mode=1 \
     vendor.gralloc.disable_ahardware_buffer=1
-
-# Fingerprint
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.qfp=false
 
 # IMS
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -131,44 +146,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.ims.disableDebugLogs=1 \
     persist.vendor.ims.disableSigHandler=1 \
     persist.vendor.ims.disableQXDMLogs=1
-
-# FRP
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.frp.pst=/dev/block/bootdevice/by-name/frp
-
-# GPU
-PRODUCT_PROPERTY_OVERRIDES += \
-    debug.egl.hw=0 \
-    debug.enable.sglscale=1 \
-    debug.gralloc.gfx_ubwc_disable=0 \
-    debug.sf.enable_hwc_vds=0 \
-    debug.sf.hw=0 \
-    debug.cpurend.vsync=false \
-    debug.sf.disable_client_composition_cache=1 \
-    debug.sf.auto_latch_unsignaled=true \
-    debug.sf.recomputecrop=0 \
-    dev.pm.dyn_samplingrate=1 \
-    persist.hwc.mdpcomp.enable=true \
-    vendor.display.disable_rotator_split=1 \
-    vendor.display.disable_skip_validate=1 \
-    vendor.display.perf_hint_window=50 \
-    vendor.gralloc.enable_fb_ubwc=1
-
-# Surfaceflinger
-PRODUCT_PROPERTY_OVERRIDES += \
-    debug.sf.use_phase_offsets_as_durations=1 \
-    debug.sf.late.sf.duration=10500000 \
-    debug.sf.late.app.duration=20500000 \
-    debug.sf.early.sf.duration=16000000 \
-    debug.sf.early.app.duration=16500000 \
-    debug.sf.earlyGl.sf.duration=13500000 \
-    debug.sf.earlyGl.app.duration=21000000
-
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    ro.surface_flinger.force_hwc_copy_for_virtual_displays=true \
-    ro.surface_flinger.max_frame_buffer_acquired_buffers=3 \
-    ro.surface_flinger.max_virtual_display_dimension=4096 \
-    ro.surface_flinger.use_color_management=true
 
 # Media
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -197,29 +174,6 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 PRODUCT_ODM_PROPERTIES += \
     ro.vendor.qti.va_odm.support=1
 
-# Sensors
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.vendor.radio.sar_sensor=1 \
-    ro.vendor.sensors.pmd=false \
-    ro.vendor.sensors.rmd=false \
-    ro.vendor.sensors.smd=false \
-    ro.vendor.sdk.sensors.gestures=false \
-    ro.vendor.sensors.facing=false \
-    ro.vendor.sensors.scrn_ortn=false \
-    ro.vendor.sensors.cmc=false \
-    ro.vendor.sensors.pedometer=false \
-    ro.hardware.sensors=jeter
-
-# Telephony
-PRODUCT_PROPERTY_OVERRIDES += \
-    ril.subscription.types=NV,RUIM \
-    ro.telephony.block_binder_thread_on_incoming_calls=false \
-    ro.telephony.call_ring.multiple=false \
-    service.qti.ims.enabled=1 \
-    telephony.lteOnCdmaDevice=1 \
-    vendor.service.qti.ims.enabled=1 \
-    ro.telephony.default_network=22,22
-
 # Radio
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.radio.multisim.config=dsds \
@@ -243,6 +197,44 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.dbg.vt_avail_ovr=1 \
     persist.dbg.wfc_avail_ovr=1
 
+# Sensors
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.vendor.radio.sar_sensor=1 \
+    ro.vendor.sensors.pmd=false \
+    ro.vendor.sensors.rmd=false \
+    ro.vendor.sensors.smd=false \
+    ro.vendor.sdk.sensors.gestures=false \
+    ro.vendor.sensors.facing=false \
+    ro.vendor.sensors.scrn_ortn=false \
+    ro.vendor.sensors.cmc=false \
+    ro.vendor.sensors.pedometer=false \
+    ro.hardware.sensors=jeter
+
+# Soc
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.soc.manufacturer=Qualcomm \
+    ro.soc.model=MSM8937
+
+# Surfaceflinger
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    ro.surface_flinger.force_hwc_copy_for_virtual_displays=true \
+    ro.surface_flinger.max_virtual_display_dimension=4096 \
+    ro.surface_flinger.use_color_management=true
+
+# Telephony
+PRODUCT_PROPERTY_OVERRIDES += \
+    ril.subscription.types=NV,RUIM \
+    ro.telephony.block_binder_thread_on_incoming_calls=false \
+    ro.telephony.call_ring.multiple=false \
+    service.qti.ims.enabled=1 \
+    telephony.lteOnCdmaDevice=1 \
+    vendor.service.qti.ims.enabled=1 \
+    ro.telephony.default_network=22,22
+
+# Time
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.vendor.delta_time.enable=true
+
 # USB
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.usb.bpt=2ec1 \
@@ -254,17 +246,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.usb.ptp=2e83 \
     ro.usb.ptp_adb=2e84
 
-# Time
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.vendor.delta_time.enable=true
-
 # Wi-Fi
 PRODUCT_PROPERTY_OVERRIDES += \
     wifi.interface=wlan0
-
-# Blur
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.surface_flinger.supports_background_blur=0
 
 # Zygote
 PRODUCT_PROPERTY_OVERRIDES += \
